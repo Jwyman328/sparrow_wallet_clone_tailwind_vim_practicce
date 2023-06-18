@@ -1,5 +1,26 @@
 import React from "react";
 import { Table } from "../../components/table/Table";
+import { TransactionLoader } from "./TransactionLoader";
+const mockTransactionDetails = [
+  {
+    date: "2019-05-32",
+    label: "This is a label for the transaction",
+    amount: ".1234567898",
+    balance: "54.564323234",
+  },
+  {
+    date: "2019-05-32",
+    label: "This is a label for the transaction",
+    amount: ".1234567898",
+    balance: "54.564323234",
+  },
+  {
+    date: "2019-05-32",
+    label: "This is a label for the transaction",
+    amount: ".1234567898",
+    balance: "54.564323234",
+  },
+];
 
 const ProgressionGraph = () => {
   return (
@@ -11,8 +32,8 @@ const ProgressionGraph = () => {
 
 export const Transactions = () => {
   return (
-    <div>
-      <div className="bg-gray-100">
+    <div className="bg-gray-200 pl-8">
+      <div className="bg-gray-200">
         <h3 className="mb-4"> Transactions</h3>
         <div className="flex flex-row w-screen">
           <div className="flex flex-col w-7/12 ">
@@ -35,8 +56,9 @@ export const Transactions = () => {
           <ProgressionGraph />
         </div>
       </div>
-      {/* <div>Transaction table</div>
-      <Table /> */}
+      <div>Transaction table</div>
+      <Table transactions={mockTransactionDetails} />
+      <TransactionLoader />
     </div>
   );
 };

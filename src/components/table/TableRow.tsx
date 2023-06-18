@@ -1,12 +1,16 @@
 import React from "react";
+import { TransactionDetails } from "../../types/TransactionTypes";
 
-export const TableRow = () => {
+interface TableRowProps {
+  transaction: TransactionDetails;
+}
+export const TableRow = ({ transaction }: TableRowProps) => {
   return (
-    <div>
-      <div>2019-05-32</div>
-      <div>This is a label for the transaction</div>
-      <div>.1234567898</div>
-      <div>54.564323234</div>
+    <div className="p-1 flex flex-row w-screen">
+      <div className="w-3/12">{transaction.date}</div>
+      <div className="w-3/12"> {transaction.label}</div>
+      <div className="w-3/12 text-right"> {transaction.amount}</div>
+      <div className="w-3/12 text-right"> {transaction.balance}</div>
     </div>
   );
 };
