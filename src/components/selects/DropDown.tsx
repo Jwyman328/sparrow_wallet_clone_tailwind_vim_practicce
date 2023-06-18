@@ -7,7 +7,7 @@ interface Option {
 interface DropDownProps {
   options: Option[];
   name: string;
-  className: string;
+  className?: string;
 }
 export const DropDown = ({ options, name, className }: DropDownProps) => {
   const createOptions = () => {
