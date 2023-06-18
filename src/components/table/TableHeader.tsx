@@ -10,7 +10,7 @@ const HeaderLabel = ({ title }: HeaderLabelProps) => {
 
 export const TableHeader = () => {
   return (
-    <div className="flex flex-row w-screen">
+    <div className="flex flex-row w-full">
       <HeaderLabel title={"Date"} />
       <HeaderLabel title={"Label"} />
       <HeaderLabel title={"Value"} />

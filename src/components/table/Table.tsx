@@ -14,7 +14,7 @@ export const Table = ({
     });
   };
   return (
-    <div className="bg-white border-4 border-gray-600 flex flex-col w-screen">
+    <div className="bg-white border-4 border-gray-600 flex flex-col w-full">
       <TableHeader />
       {createRows()}
     </div>

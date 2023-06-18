@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { NavBar } from "./components/nav/NavBar";
 import { Send } from "./tabs/send/Send";
 import { Transactions } from "./tabs/transactions/Transactions";
+import { NetworkFooter } from "./components/footers/NetworkFooter";
+import { Receive } from "./tabs/receive/Receive";
 
 enum Tabs {
   TRANSACTIONS,
@@ -13,7 +15,7 @@ enum Tabs {
 }
 
 export default function App() {
-  const [currentTab, setCurrentTab] = useState<Tabs>(Tabs.SEND);
+  const [currentTab, setCurrentTab] = useState<Tabs>(Tabs.RECIEVE);
   const navBlocks = [
     {
       title: "Transactions",
@@ -28,7 +30,7 @@ export default function App() {
       },
     },
     {
-      title: "Recieve",
+      title: "Receive",
       onClick: () => {
         setCurrentTab(Tabs.RECIEVE);
       },
@@ -59,12 +61,17 @@ export default function App() {
       return <Transactions />;
     } else if (currentTab === Tabs.SEND) {
       return <Send />;
+    } else if (currentTab === Tabs.RECIEVE) {
+      return <Receive />;
     }
   };
   return (
-    <div className="flex flex-row h-screen w-screen text-[16px]">
-      <NavBar navBlocks={navBlocks} />
-      {renderTab()}
+    <div className="h-screen w-screen pb-[40px]">
+      <div className="flex flex-row h-full w-screen text-[16px]">
+        <NavBar navBlocks={navBlocks} />
+        {renderTab()}
+      </div>
+      <NetworkFooter />
     </div>
   );
 }

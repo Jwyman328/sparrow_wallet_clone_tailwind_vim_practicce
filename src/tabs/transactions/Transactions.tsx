@@ -1,4 +1,5 @@
 import React from "react";
+
 import { Table } from "../../components/table/Table";
 import { TransactionLoader } from "./TransactionLoader";
 const mockTransactionDetails = [
@@ -32,10 +33,10 @@ const ProgressionGraph = () => {
 
 export const Transactions = () => {
   return (
-    <div className="bg-gray-200 pl-8">
+    <div className="pt-6 bg-gray-200 pl-8 w-10/12">
       <div className="bg-gray-200">
         <h3 className="mb-4"> Transactions</h3>
-        <div className="flex flex-row w-screen">
+        <div className="flex flex-row w-8/12">
           <div className="flex flex-col w-7/12 ">
             <div>
               <div className="mb-4 flex flex-row">

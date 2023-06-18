@@ -26,5 +26,5 @@ export const NavBar = ({ navBlocks }: NavBarProps) => {
       return <NavBlock onClick={navBlock.onClick} title={navBlock.title} />;
     });
   };
-  return <div className="h-full">{createBlocks()}</div>;
+  return <div className="h-full w-2/12">{createBlocks()}</div>;
 };

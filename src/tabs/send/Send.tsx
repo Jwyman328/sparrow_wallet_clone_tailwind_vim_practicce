@@ -18,7 +18,7 @@ export const Send = () => {
     console.log("hit add not really sure what this button does though");
   };
   return (
-    <div className="pl-10 pt-6 bg-gray-200 w-full">
+    <div className="pl-10 pt-6 bg-gray-200 w-full flex flex-col">
       <div className="w-10/12">
         <p className={"mb-5"}>Send</p>
         <div className="flex flex-row">
@@ -48,6 +48,7 @@ export const Send = () => {
         </div>
         <FeeManager />
       </div>
+      <SendFooter />
     </div>
   );
 };
@@ -77,7 +78,6 @@ const FeeManagerHeader = () => {
     </div>
   );
 };
-
 const FeeManager = () => {
   return (
     <div>
@@ -109,6 +109,41 @@ const FeeManager = () => {
           </div>
         </div>
         <div className="ml-12 w-6/12 bg-red-100 h-[300px]">this is chart</div>
+      </div>
+    </div>
+  );
+};
+
+const SendFooter = () => {
+  return (
+    <div className="mb-10 mt-auto flex flex-row w-full items-center">
+      <p className="mr-8">Optimze:</p>
+      <div className="flex flex-row justify-center items-center">
+        <Button
+          onClick={() => console.log("efficiency button clicked")}
+          className=""
+        >
+          Efficiency
+        </Button>
+
+        <Button
+          onClick={() => console.log("privacy button clicked")}
+          className=""
+        >
+          Privacy
+        </Button>
+        <div className="ml-2 h-4 w-4 rounded-lg bg-gray-600"></div>
+      </div>
+      <div className="ml-auto mr-10">
+        <Button onClick={() => console.log("clear button clicked")}>
+          clear
+        </Button>
+        <Button
+          className={"!bg-blue-200 ml-4"}
+          onClick={() => console.log("create transaction button clicked")}
+        >
+          Create Transaction
+        </Button>
       </div>
     </div>
   );
