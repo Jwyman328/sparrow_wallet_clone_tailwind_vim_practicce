@@ -12,3 +12,9 @@ export interface UtxoDetails {
   label: string;
   value: string;
 }
+
+export interface AddressDetails {
+  addressOutputs: string;
+  label: string;
+  value: string;
+}
