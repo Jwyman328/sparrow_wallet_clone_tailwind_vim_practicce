@@ -5,3 +5,10 @@ export interface TransactionDetails {
   balance: string;
 }
 
+export interface UtxoDetails {
+  date: string;
+  output: string;
+  address: string;
+  label: string;
+  value: string;
+}

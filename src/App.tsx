@@ -5,6 +5,7 @@ import { Transactions } from "./tabs/transactions/Transactions";
 import { NetworkFooter } from "./components/footers/NetworkFooter";
 import { Receive } from "./tabs/receive/Receive";
 import { Settings } from "./tabs/settings/Settings";
+import { Utxos } from "./tabs/utxos/Utxos";
 
 enum Tabs {
   TRANSACTIONS,
@@ -16,7 +17,7 @@ enum Tabs {
 }
 
 export default function App() {
-  const [currentTab, setCurrentTab] = useState<Tabs>(Tabs.SETTINGS);
+  const [currentTab, setCurrentTab] = useState<Tabs>(Tabs.UTXOS);
   const navBlocks = [
     {
       title: "Transactions",
@@ -66,6 +67,8 @@ export default function App() {
       return <Receive />;
     } else if (currentTab === Tabs.SETTINGS) {
       return <Settings />;
+    } else if (currentTab === Tabs.UTXOS) {
+      return <Utxos />;
     }
   };
   return (
