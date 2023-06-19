@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Table } from "../../components/table/Table";
 import { TransactionLoader } from "./TransactionLoader";
+import { TransactionTable } from "./TransactionTable";
 const mockTransactionDetails = [
   {
     date: "2019-05-32",
@@ -58,7 +58,7 @@ export const Transactions = () => {
         </div>
       </div>
       <div>Transaction table</div>
-      <Table transactions={mockTransactionDetails} />
+      <TransactionTable transactions={mockTransactionDetails} />
       <TransactionLoader />
     </div>
   );

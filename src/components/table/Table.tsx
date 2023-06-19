@@ -1,22 +1,13 @@
-import React from "react";
-import { TableHeader } from "./TableHeader";
-import { TableRow } from "./TableRow";
-import { TransactionDetails } from "../../types/TransactionTypes";
+import React, { ReactElement } from "react";
 
-export const Table = ({
-  transactions,
-}: {
-  transactions: TransactionDetails[];
-}) => {
-  const createRows = () => {
-    return transactions.map((transaction) => {
-      return <TableRow transaction={transaction} />;
-    });
-  };
+interface TableProps {
+  children: ReactElement;
+}
+
+export const Table = ({ children }: TableProps) => {
   return (
     <div className="bg-white border-4 border-gray-600 flex flex-col w-full">
-      <TableHeader />
-      {createRows()}
+      {children}
     </div>
   );
 };

@@ -1,20 +1,16 @@
-import React from "react";
+import React, { ReactElement } from "react";
 interface HeaderLabelProps {
   title: string;
 }
-const HeaderLabel = ({ title }: HeaderLabelProps) => {
+export const HeaderLabel = ({ title }: HeaderLabelProps) => {
   return (
     <div className="border-gray-300 border-2 w-3/12 text-center">{title}</div>
   );
 };
 
-export const TableHeader = () => {
-  return (
-    <div className="flex flex-row w-full">
-      <HeaderLabel title={"Date"} />
-      <HeaderLabel title={"Label"} />
-      <HeaderLabel title={"Value"} />
-      <HeaderLabel title={"Balance"} />
-    </div>
-  );
+interface TableHeaderProps {
+  children: ReactElement;
+}
+export const TableHeader = ({ children }: TableHeaderProps) => {
+  return (<div className="flex flex-row w-full">{children}</div>)
 };
